@@ -1,10 +1,10 @@
-##思路
+## 思路
 
-###Integer.bitCount()
+### Integer.bitCount()
 
 java的built in function，可以计算数字二进制1的个数
 
-###不用built in function
+### 不用built in function
 
 **发现规律**
 0-3 的二进制1的个数为[0,1,1,2]

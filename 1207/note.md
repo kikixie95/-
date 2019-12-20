@@ -1,6 +1,6 @@
-##思路
+## 思路
 
-###hashmap && hashset
+### hashmap && hashset
 
 将所有的数组元素装进hashmap里， key存元素值，value存出现次数。
 再将所有的value装进hashset里。
