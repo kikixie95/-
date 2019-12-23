@@ -40,19 +40,22 @@ list.remove("s"); //delete
 在java里，linkedlist实现了Deque,可以做双向队列。
 
 ```java
-Deque<Integer> queue = new LinkedList<>();
+// Deque<Integer> queue = new LinkedList<>();
+//统一用法， queue也用ArrayDeque实现
+Deque<Integer> stack = new ArrayDeque<Integer>(); //initiate
 
-queue.add(122); //add, will throw exception when sth wrong
+queue.addFirst(122); //add at the head of the queue, will throw exception when sth wrong
+queue.addLast(122);//add at the end of the queue, will throw exception when sth wrong
 
-queue.offer(122);//add, will return false when sth wrong
+// queue.offer(122);//add, will return false when sth wrong
 
-int head = queue.poll();  //return first element and remove it (throw exception)
+// int head = queue.poll();  //return first element and remove it (throw exception)
 
-head = queue.remove(); //return the first element and remove it (return false)
-
+head = queue.removeFirst(); //return the first element and remove it (return false)
 head = queue.peek(); // return the first element
 
 head = queue.element(); //return the first element
+
 
 ```
 
@@ -63,9 +66,10 @@ head = queue.element(); //return the first element
 ```java
 Deque<Integer> stack = new ArrayDeque<Integer>(); //initiate
 
-stack.push(12);// add from the end 
+// stack.push(12);// add from the end 
+stack.addLast(12);// add from the end
 
-int tail = stack.pop();// remove from the end, and delete this element
+int tail = stack.removeLast();// remove from the end, and delete this element
 
 tail = stack.peek(); // remove from the end
 
