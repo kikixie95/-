@@ -103,3 +103,32 @@ class Solution {
         return res.num; 
     }
 }
+
+// niubi
+class Solution {
+    public int kthSmallest(int[][] matrix, int k) {
+        int left = matrix[0][0], right = matrix[matrix.length-1][matrix.length-1],mid = 0, count = 0;
+        while(left < right){
+            mid = (left+right)>>1;
+            count = helper(matrix,mid);
+            if(count < k){
+                left = mid+1;
+            }else{
+                right = mid;
+            }
+        }
+        return left;
+    }
+    public int helper(int[][] matrix, int target){
+        int n = matrix.length, i = n - 1, j = 0, res = 0;
+        while(i >= 0 && j < n){
+            if(matrix[i][j] <= target){
+                res += i+1;
+                j++;
+            }else{
+                i--;
+            }
+        }
+        return res;
+    }
+}
