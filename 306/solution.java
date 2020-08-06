@@ -24,3 +24,31 @@ class Solution {
         return false;
     }
 }
+
+
+
+class Solution {
+    int n ;
+    public boolean isAdditiveNumber(String num) {
+       n = num.length();
+        for(int i = 1; i <= n/2; i++){
+            if(num.charAt(0) == '0' && i>1) return false;
+            long first = Long.valueOf(num.substring(0,i));
+            for(int j =1; Math.max(i,j) <= n-i-j; j++){
+                if(num.charAt(i) == '0' && j > 1){
+                    break;
+                }
+                long second = Long.valueOf(num.substring(i,i+j));
+                if(isValid(first,second,i+j,num)) return true;
+            }
+        }
+        return false;
+    }
+    public boolean isValid(long first, long second, int start,String num){
+        if(start ==n ) return true;
+        second = first+second;
+        first = second-first;
+        String sum = String.valueOf(second);
+        return num.startsWith(sum,start) && isValid(first,second,start+sum.length(),num);
+    }
+}

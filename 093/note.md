@@ -8,6 +8,6 @@
 
 ## Backtracking
 - 用一个arraylist res存放最终答案， 一个arraylist arr存放递归中符合条件的一个IP地址
-- 递归出口，当arr的长度为4，且字符串遍历完毕，则将此arr加入res,return； 当arr长度为4**或者**字符串遍历完毕，直接return
+- 递归出口，当arr的长度为4，且字符串遍历完毕，则将此arr加入res,return； 当arr长度为4 **或者**字符串遍历完毕，直接return
 - 用一个checkstatus方法判断当前数字是否符合要求；
 - 递归后要将arr的最后一个元素移出（backtracking的精髓）
